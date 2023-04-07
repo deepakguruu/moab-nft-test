@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Token Dapp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Token Dapp</h1>
+      <div class="nav-buttons">
+        <button id="connect-wallet-btn">Connect Wallet</button>
+        <button id="disconnect-wallet-btn">Disconnect</button>
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+        <h2>Buy Tokens</h2>
+        <div class="input-container">
+          <label for="numShares">Number of shares:</label>
+          <input type="number" id="numShares" name="numShares" min="1" required>
+          <span class="max-value" id="maxBuyValue"></span>
+        </div>
+        <div class="input-container">
+          <label for="wallet-balance">Wallet balance:</label>
+          <span id="wallet-balance"></span>
+        </div>
+        <button id="mintBtn">Mint</button>
+        <p class="mint-price">Mint Price: <span id="mintPrice"></span> USDT</p>
+      </div>
+      <div class="content">
+        <h2>Sell Tokens</h2>
+        <div class="input-container">
+          <label for="numSharesSell">Number of shares:</label>
+          <input type="number" id="numSharesSell" name="numSharesSell" min="1" required>
+          <span class="max-value" id="maxSellValue"></span>
+        </div>
+        <div class="input-container">
+          <label for="balance">Share balance:</label>
+          <span id="balance"></span>
+        </div>
+        <button id="sellBtn">Sell</button>
+      </div>
+    </div>
+    <div id="loading-modal" class="modal">
+      <div class="loading-modal-content">
+        <div class="loader"></div>
+        <div class="loading-modal-message"></div>
+      </div>
+    </div>
+    <div id="alertModal" class="modal">
+      <div class="alert-modal-content">
+        <span class="alert-close">&times;</span>
+        <div class="alert-modal-title"></div>
+        <div class="alert-modal-message"></div>
+      </div>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
